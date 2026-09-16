@@ -145,7 +145,7 @@ class ControlPanel(QFrame):
         # --- FERRAMENTAS Section ---
         tools_layout = QHBoxLayout()
         
-        self.btn_settings = QPushButton("⚙ Settings")
+        self.btn_settings = QPushButton("Settings")
         self.btn_settings.setProperty("class", "toolBtn")
         self.btn_settings.clicked.connect(self.settings_clicked)
         

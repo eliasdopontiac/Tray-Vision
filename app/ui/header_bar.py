@@ -40,7 +40,7 @@ class HeaderBar(QFrame):
         self.status_label.setObjectName("versionBadge")
         self.status_label.setStyleSheet("background-color: #E6F6EC; color: #00A650;")
         
-        self.model_chip = self.model_label = QLabel("Model: Nenhum 🟦")
+        self.model_chip = self.model_label = QLabel("Model: Nenhum")
         self.model_chip.setObjectName("versionBadge")
         
         center_layout.addWidget(self.status_label)
@@ -68,8 +68,8 @@ class HeaderBar(QFrame):
         
     def set_active_model(self, model_name: str):
         if not model_name:
-            self.model_chip.setText("Nenhum modelo")
-            self.model_chip.setStyleSheet("background: #F1F5F9; color: #64748B; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;")
+            self.model_chip.setText("Model: Nenhum")
+            self.model_chip.setStyleSheet("background-color: #F5F6FA; color: #6B6B6B; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;")
         else:
-            self.model_chip.setText(model_name)
-            self.model_chip.setStyleSheet("background: #DBEAFE; color: #1E40AF; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;")
+            self.model_chip.setText(f"Model: {model_name}")
+            self.model_chip.setStyleSheet("background-color: #E8F0FE; color: #1428A0; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;")

@@ -59,7 +59,7 @@ class ROIDialog(QDialog):
         info_layout = QHBoxLayout(info)
         info_layout.setContentsMargins(12, 10, 12, 10)
         lbl_info = QLabel(
-            "ℹ️  A definição de ROI por arraste será implementada em versão futura. "
+            "A definição de ROI por arraste será implementada em versão futura. "
             "Atualmente o modelo YOLO detecta os slots automaticamente."
         )
         lbl_info.setWordWrap(True)

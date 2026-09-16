@@ -36,8 +36,8 @@ class TrayPanel(QFrame):
         self.cards = []
         for i in range(12):
             card = SlotCard(i + 1)
-            row = i // 3
-            col = i % 3
+            row = i // 4
+            col = i % 4
             self.grid.addWidget(card, row, col)
             self.cards.append(card)
             
@@ -72,7 +72,7 @@ class TrayPanel(QFrame):
         alert_layout.setContentsMargins(12, 12, 12, 12)
         
         self.lbl_alert_icon = QLabel("⚠")
-        self.lbl_alert_icon.setStyleSheet("color: #B91C1C; font-size: 16px;")
+        self.lbl_alert_icon.setStyleSheet("color: #FFFFFF; font-size: 16px;")
         
         self.lbl_alert_text = QLabel("Defeito detectado")
         self.lbl_alert_text.setObjectName("alertText")

@@ -26,10 +26,10 @@ class SettingsDialog(QDialog):
 
         # Info Items
         items = [
-            ("📷", "Câmera IP/URL", "Suporte a câmera RTSP e HTTP (futuro)"),
-            ("📂", "Diretório de Modelos", "Alterar pasta padrão de modelos .pt (futuro)"),
-            ("🔔", "Alertas Sonoros", "Configurar arquivo WAV customizado (futuro)"),
-            ("🖥️", "Escala da Interface", "100% / 125% / 150% (futuro)"),
+            ("•", "Câmera IP/URL", "Suporte a câmera RTSP e HTTP (futuro)"),
+            ("•", "Diretório de Modelos", "Alterar pasta padrão de modelos .pt (futuro)"),
+            ("•", "Alertas Sonoros", "Configurar arquivo WAV customizado (futuro)"),
+            ("•", "Escala da Interface", "100% / 125% / 150% (futuro)"),
         ]
 
         for icon, title, desc in items:
