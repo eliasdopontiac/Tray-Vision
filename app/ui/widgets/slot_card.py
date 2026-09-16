@@ -50,19 +50,19 @@ class SlotCard(QFrame):
         if status == "EMPTY":
             self.lbl_conf.setText("")
             self.lbl_icon.setText("—")
-            self.lbl_icon.setStyleSheet("font-size: 24px; color: #94A3B8; font-weight: bold;")
+            self.lbl_icon.setStyleSheet("font-size: 20px; color: #6B6B6B; font-weight: bold;")
         elif status == "OK":
             self.lbl_conf.setText(f"{int(conf*100)}%")
             self.lbl_icon.setText("✓")
-            self.lbl_icon.setStyleSheet("font-size: 24px; color: #16A34A; font-weight: bold;")
+            self.lbl_icon.setStyleSheet("font-size: 20px; color: #FFFFFF; background-color: #00A650; border-radius: 12px; margin: 4px; padding-bottom: 2px;")
         elif status == "NG":
             self.lbl_conf.setText(f"{int(conf*100)}%")
-            self.lbl_icon.setText("✗")
-            self.lbl_icon.setStyleSheet("font-size: 24px; color: #B91C1C; font-weight: bold;")
+            self.lbl_icon.setText("✕")
+            self.lbl_icon.setStyleSheet("font-size: 16px; color: #FFFFFF; background-color: #DA1E28; border-radius: 12px; margin: 4px;")
         elif status == "NA":
             self.lbl_conf.setText("")
             self.lbl_icon.setText("—")
-            self.lbl_icon.setStyleSheet("font-size: 24px; color: #94A3B8; font-weight: bold;")
+            self.lbl_icon.setStyleSheet("font-size: 20px; color: #6B6B6B; font-weight: bold;")
             
         # Re-apply styles
         self.style().unpolish(self)

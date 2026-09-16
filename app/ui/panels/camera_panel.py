@@ -97,11 +97,11 @@ class CameraPanel(QFrame):
         scale_y = disp_h / h
         
         # 1. Draw Grid
-        pen_grid = QPen(QColor("#3B82F6"))
+        pen_grid = QPen(QColor("#1428A0")) # Samsung Blue grid
         pen_grid.setWidth(1)
         # alpha
         c = pen_grid.color()
-        c.setAlpha(150)
+        c.setAlpha(200)
         pen_grid.setColor(c)
         painter.setPen(pen_grid)
         
@@ -138,11 +138,11 @@ class CameraPanel(QFrame):
                 
                 # Colors
                 if cls_name == "OK":
-                    color = QColor("#16A34A")
+                    color = QColor("#00A650") # Samsung Green
                 elif cls_name == "NG":
-                    color = QColor("#B91C1C")
+                    color = QColor("#DA1E28") # Samsung Red
                 else:
-                    color = QColor("#94A3B8")
+                    color = QColor("#6B6B6B") # Samsung Gray
                     
                 pen_box = QPen(color)
                 pen_box.setWidth(3)

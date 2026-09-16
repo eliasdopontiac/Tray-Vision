@@ -9,41 +9,51 @@ class HeaderBar(QFrame):
         self.setFixedHeight(56)
         
         layout = QHBoxLayout(self)
-        layout.setContentsMargins(24, 0, 24, 0)
+        layout.setContentsMargins(16, 8, 16, 8)
+        layout.setSpacing(16)
         
-        # Left side
-        left_widget = QWidget()
-        left_layout = QHBoxLayout(left_widget)
-        left_layout.setContentsMargins(0, 0, 0, 0)
+        # Left side - Logo & Title
+        title_layout = QHBoxLayout()
+        title_layout.setSpacing(8)
         
-        self.logo_label = QLabel("📷 TRAY VISION")
-        self.logo_label.setObjectName("appTitle")
+        lbl_logo = QLabel("[]") # Placeholder for Samsung square brackets logo
+        lbl_logo.setStyleSheet("color: #1428A0; font-weight: bold; font-size: 20px;")
         
-        self.version_badge = QLabel("v2.0")
-        self.version_badge.setObjectName("versionBadge")
+        lbl_title = QLabel("TRAY VISION")
+        lbl_title.setObjectName("logoText")
         
-        left_layout.addWidget(self.logo_label)
-        left_layout.addWidget(self.version_badge)
-        left_layout.addStretch()
+        lbl_subtitle = QLabel("Quality Inspection System")
+        lbl_subtitle.setObjectName("subtitleText")
         
-        # Center side
-        center_widget = QWidget()
-        center_layout = QHBoxLayout(center_widget)
-        center_layout.setContentsMargins(0, 0, 0, 0)
-        center_layout.setSpacing(16)
+        title_layout.addWidget(lbl_logo)
+        title_layout.addWidget(lbl_title)
+        title_layout.addWidget(lbl_subtitle)
+        title_layout.addStretch()
         
-        self.status_label = QLabel("🟢 Sistema Ativo")
-        self.status_label.setObjectName("statusText")
+        layout.addLayout(title_layout, 1)
         
-        self.model_chip = QLabel("Nenhum modelo")
-        self.model_chip.setStyleSheet("background: #DBEAFE; color: #1E40AF; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 500;")
+        # Center - Status & Model
+        center_layout = QHBoxLayout()
+        center_layout.setSpacing(12)
         
-        self.clock_label = QLabel("00:00:00")
-        self.clock_label.setObjectName("clockText")
+        self.status_label = QLabel("● ACTIVE")
+        self.status_label.setObjectName("versionBadge")
+        self.status_label.setStyleSheet("background-color: #E6F6EC; color: #00A650;")
+        
+        self.model_chip = self.model_label = QLabel("Model: Nenhum 🟦")
+        self.model_chip.setObjectName("versionBadge")
         
         center_layout.addWidget(self.status_label)
         center_layout.addWidget(self.model_chip)
-        center_layout.addWidget(self.clock_label)
+        
+        layout.addLayout(center_layout, 1)
+        
+        # Right side - Clock
+        self.clock_label = QLabel()
+        self.clock_label.setObjectName("clockText")
+        self.clock_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        
+        layout.addWidget(self.clock_label, 1)
         
         # Clock timer
         self.timer = QTimer(self)
@@ -51,24 +61,7 @@ class HeaderBar(QFrame):
         self.timer.start(1000)
         self.update_time()
         
-        # Right side
-        right_widget = QWidget()
-        right_layout = QHBoxLayout(right_widget)
-        right_layout.setContentsMargins(0, 0, 0, 0)
-        
-        # We will use standard OS window controls, or add custom ones if borderless window
-        # For now, let's just add a stretch to keep center centered
-        right_layout.addStretch()
-        
-        # Set size policies to ensure center is truly centered
-        left_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        center_widget.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        right_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        
-        layout.addWidget(left_widget)
-        layout.addWidget(center_widget)
-        layout.addWidget(right_widget)
-        
+
     def update_time(self):
         now = datetime.datetime.now()
         self.clock_label.setText(now.strftime("%H:%M:%S"))

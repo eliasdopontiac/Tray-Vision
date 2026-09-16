@@ -58,17 +58,7 @@ class MainWindow(QMainWindow):
         self.camera_panel = CameraPanel()
         self.tray_panel = TrayPanel()
         
-        # Shadows
-        for panel in (self.control_panel, self.camera_panel, self.tray_panel):
-            shadow = QGraphicsDropShadowEffect()
-            shadow.setBlurRadius(16)
-            shadow.setColor(Qt.black)
-            shadow.setOffset(0, 4)
-            # Alpha .08 roughly ~20/255
-            color = shadow.color()
-            color.setAlpha(20)
-            shadow.setColor(color)
-            panel.setGraphicsEffect(shadow)
+        # Panels are flat in Samsung style, relying on 1px borders defined in QSS
             
         content_layout.addWidget(self.control_panel)
         content_layout.addWidget(self.camera_panel, 1) # flex

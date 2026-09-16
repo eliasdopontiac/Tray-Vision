@@ -18,10 +18,10 @@ class TrayPanel(QFrame):
         layout.setSpacing(16)
         
         # Header
-        lbl_title = QLabel("BANDEJA 4×3")
+        lbl_title = QLabel("TRAY STATUS")
         lbl_title.setObjectName("trayTitle")
         
-        self.lbl_subtitle = QLabel("12 slots")
+        self.lbl_subtitle = QLabel("4×3 · 12 SLOTS")
         self.lbl_subtitle.setObjectName("traySubtitle")
         
         layout.addWidget(lbl_title)
@@ -87,9 +87,10 @@ class TrayPanel(QFrame):
         layout.addStretch()
         
         # Reset Button
-        self.btn_reset = QPushButton("↺ Nova Inspeção")
-        self.btn_reset.setProperty("class", "toolBtn")
-        self.btn_reset.setMinimumHeight(40)
+        self.btn_reset = QPushButton("NEW INSPECTION")
+        self.btn_reset.setProperty("class", "primary") # using primary outlined style instead of toolBtn
+        self.btn_reset.setStyleSheet("background-color: transparent; color: #1428A0; border: 1px solid #1428A0;")
+        self.btn_reset.setMinimumHeight(44)
         self.btn_reset.clicked.connect(self.reset_clicked)
         layout.addWidget(self.btn_reset)
         
@@ -108,13 +109,13 @@ class TrayPanel(QFrame):
                     ng_slots.append(state.index)
                 elif state.status == "NA": na += 1
                 
-        self.lbl_ok.setText(f"✓ OK: {ok}")
-        self.lbl_ng.setText(f"✗ NG: {ng}")
-        self.lbl_na.setText(f"— NA: {na}")
+        self.lbl_ok.setText(f"✓ {ok} OK")
+        self.lbl_ng.setText(f"✗ {ng} NG")
+        self.lbl_na.setText(f"— {na} NA")
         
         if ng > 0:
             slots_str = ", ".join([f"{s:02d}" for s in ng_slots])
-            self.lbl_alert_text.setText(f"Defeito detectado — Slot {slots_str}")
+            self.lbl_alert_text.setText(f"⚠ Defect detected — Slot {slots_str}")
             if self.alert_banner.isHidden():
                 self.alert_banner.show()
         else:

@@ -1,0 +1,348 @@
+/* SAMSUNG CORPORATE DESIGN SYSTEM */
+/* Colors:
+   Primary Blue: #1428A0
+   Secondary Blue: #2563EB
+   Background: #F5F6FA
+   Card Bg: #FFFFFF
+   Border: #E8EAED
+   Text Primary: #161616
+   Text Secondary: #6B6B6B
+   Success: #00A650
+   Error: #DA1E28
+   Warning: #F5A623
+*/
+
+QMainWindow, QWidget#root {
+    background-color: #F5F6FA;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    color: #161616;
+}
+
+/* Alert active state on TrayPanel */
+QFrame#trayPanel[alertActive="true"] {
+    border: 2px solid #DA1E28;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+/* Cards & Panels */
+QFrame.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E8EAED;
+    border-radius: 4px; /* Samsung sharp corners */
+}
+
+/* Header Bar */
+QFrame#headerBar {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #1428A0; /* Samsung blue bottom border */
+}
+
+QLabel#logoText {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1428A0; /* Samsung Blue */
+    letter-spacing: 1px;
+}
+
+QLabel#subtitleText {
+    color: #6B6B6B;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+QLabel#versionBadge {
+    background-color: #E8F0FE;
+    color: #1428A0;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+QLabel#statusText {
+    color: #161616;
+    font-weight: 600;
+}
+
+QLabel#clockText {
+    color: #6B6B6B;
+    font-size: 13px;
+}
+
+/* Control Panel */
+QLabel.sectionHeader {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1428A0;
+    padding-left: 8px;
+    border-left: 3px solid #1428A0; /* Accent line */
+    text-transform: uppercase;
+}
+
+QLabel.inputLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6B6B6B;
+    text-transform: uppercase;
+}
+
+/* Dropdowns */
+QComboBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E8EAED;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #161616;
+    min-height: 32px;
+}
+
+QComboBox:hover {
+    border: 1px solid #2563EB;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 28px;
+    border-left: 1px solid #E8EAED;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #F5F6FA;
+}
+
+QComboBox::down-arrow {
+    image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%236B6B6B'/></svg>");
+    width: 10px;
+    height: 6px;
+}
+
+QComboBox::down-arrow:on {
+    image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 6l5-6 5 6z' fill='%231428A0'/></svg>");
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #E8EAED;
+    border-radius: 4px;
+    padding: 4px;
+    outline: none;
+    selection-background-color: #E8F0FE;
+    selection-color: #1428A0;
+}
+
+QComboBox QAbstractItemView::item {
+    min-height: 30px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    color: #161616;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #F5F6FA;
+}
+
+/* Slider */
+QSlider::groove:horizontal {
+    border: none;
+    height: 4px;
+    background: #E8EAED;
+    border-radius: 2px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #2563EB; /* Electric blue */
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    background: #FFFFFF;
+    border: 1px solid #2563EB;
+    width: 16px;
+    height: 16px;
+    margin: -6px 0;
+    border-radius: 8px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #F5F6FA;
+}
+
+/* Buttons */
+QPushButton {
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+QPushButton.primary {
+    background-color: #1428A0; /* Samsung Blue */
+    color: white;
+    border: none;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+QPushButton.primary:hover {
+    background-color: #0F1E78;
+}
+
+QPushButton.primary:disabled {
+    background-color: #9CA3AF;
+}
+
+QPushButton.danger {
+    background-color: #FFFFFF;
+    color: #DA1E28;
+    border: 1px solid #DA1E28;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+QPushButton.danger:hover {
+    background-color: #FFF0F0;
+}
+
+QPushButton.danger:disabled {
+    color: #9CA3AF;
+    border-color: #E8EAED;
+}
+
+QPushButton.toolBtn {
+    background-color: transparent;
+    color: #2563EB; /* Link color */
+    border: none;
+    font-weight: 500;
+}
+
+QPushButton.toolBtn:hover {
+    background-color: #E8F0FE;
+    border-radius: 4px;
+}
+
+/* Badges */
+QLabel.badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+QLabel.badge[type="ok"] {
+    background-color: #E6F6EC;
+    color: #00A650;
+    border: 1px solid #00A650;
+}
+
+QLabel.badge[type="ng"] {
+    background-color: #FBE8E9;
+    color: #DA1E28;
+    border: 1px solid #DA1E28;
+}
+
+QLabel.badge[type="na"] {
+    background-color: #F5F6FA;
+    color: #6B6B6B;
+    border: 1px solid #E8EAED;
+}
+
+/* Tray Panel */
+QLabel#trayTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1428A0;
+    text-transform: uppercase;
+}
+
+QLabel#traySubtitle {
+    color: #6B6B6B;
+    font-size: 12px;
+}
+
+/* Slot Cards */
+QFrame.slotCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E8EAED;
+    border-radius: 4px;
+}
+
+QFrame.slotCard[state="ok"] {
+    border-left: 3px solid #00A650;
+    background-color: #FFFFFF;
+}
+
+QFrame.slotCard[state="ng"] {
+    border-left: 3px solid #DA1E28;
+    background-color: #FFF0F0;
+}
+
+QFrame.slotCard[state="empty"], QFrame.slotCard[state="na"] {
+    border-left: 3px solid #E8EAED;
+    background-color: #FAFAFA;
+}
+
+QLabel.slotNumber {
+    font-size: 10px;
+    color: #6B6B6B;
+    font-weight: 600;
+}
+
+QLabel.slotConf {
+    font-size: 10px;
+    color: #6B6B6B;
+}
+
+QLabel.slotLabel {
+    font-size: 11px;
+    font-weight: bold;
+}
+QLabel.slotLabel[state="ok"] { color: #00A650; }
+QLabel.slotLabel[state="ng"] { color: #DA1E28; }
+QLabel.slotLabel[state="empty"], QLabel.slotLabel[state="na"] { color: #6B6B6B; }
+
+/* Alert Banner */
+QFrame#alertBanner {
+    background-color: #DA1E28;
+    border-radius: 4px;
+}
+
+QLabel#alertText {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Status Bar */
+QFrame#statusBar {
+    background-color: #FFFFFF;
+    border-top: 1px solid #E8EAED;
+}
+
+QLabel.statusItem {
+    font-size: 11px;
+    color: #6B6B6B;
+    font-weight: 500;
+}
+
+/* HUD Text */
+QLabel.hudText {
+    color: #FFFFFF;
+    font-size: 11px;
+    background-color: rgba(0, 0, 0, 150);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Progress Bar */
+QProgressBar {
+    border: none;
+    background-color: #E8EAED;
+    border-radius: 2px;
+    text-align: center;
+    color: transparent;
+}
+
+QProgressBar::chunk {
+    background-color: #2563EB;
+    border-radius: 2px;
+}

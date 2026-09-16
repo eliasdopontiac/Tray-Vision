@@ -25,8 +25,8 @@ class ControlPanel(QFrame):
         layout.setContentsMargins(16, 20, 16, 20)
         layout.setSpacing(16)
         
-        # --- CONFIGURAÇÕES Header ---
-        header_lbl = QLabel("CONFIGURAÇÕES")
+        # --- INSPECTION SETUP Header ---
+        header_lbl = QLabel("INSPECTION SETUP")
         header_lbl.setProperty("class", "sectionHeader")
         layout.addWidget(header_lbl)
         
@@ -127,11 +127,12 @@ class ControlPanel(QFrame):
         layout.addWidget(div2)
         
         # --- ACTION BUTTONS ---
-        self.btn_start = QPushButton("▶ INICIAR INSPEÇÃO")
+        self.btn_start = QPushButton("▶ START INSPECTION")
         self.btn_start.setProperty("class", "primary")
+        self.btn_start.setMinimumHeight(52)
         self.btn_start.clicked.connect(self.start_clicked)
         
-        self.btn_stop = QPushButton("■ PARAR")
+        self.btn_stop = QPushButton("■ STOP")
         self.btn_stop.setProperty("class", "danger")
         self.btn_stop.clicked.connect(self.stop_clicked)
         self.btn_stop.setEnabled(False) # Initial state
@@ -144,16 +145,19 @@ class ControlPanel(QFrame):
         # --- FERRAMENTAS Section ---
         tools_layout = QHBoxLayout()
         
-        self.btn_settings = QPushButton("⚙ Config")
+        self.btn_settings = QPushButton("⚙ Settings")
         self.btn_settings.setProperty("class", "toolBtn")
         self.btn_settings.clicked.connect(self.settings_clicked)
         
-        self.btn_roi = QPushButton("📐 ROI")
+        self.btn_roi = QPushButton("ROI")
         self.btn_roi.setProperty("class", "toolBtn")
         self.btn_roi.clicked.connect(self.roi_clicked)
+        self.btn_export = QPushButton("Export")
+        self.btn_export.setProperty("class", "toolBtn")
         
         tools_layout.addWidget(self.btn_settings)
         tools_layout.addWidget(self.btn_roi)
+        tools_layout.addWidget(self.btn_export)
         
         layout.addLayout(tools_layout)
         

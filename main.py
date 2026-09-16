@@ -21,7 +21,7 @@ def main():
     app = QApplication(sys.argv)
     
     # Load QSS
-    load_qss(app, "app/styles/light_blue.qss")
+    load_qss(app, "app/styles/samsung_style.qss")
     
     window = MainWindow()
     window.show()
